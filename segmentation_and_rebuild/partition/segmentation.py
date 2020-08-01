@@ -33,9 +33,9 @@ if not sys.warnoptions:
 
 parser = argparse.ArgumentParser(description='Point Cloud Unsupervised Segmentation')
 # --------------------------------------------                 parameters     ------------------------------------------
-parser.add_argument('--path_to_data', default="/Data/forest4D_dlr", help="Path to data") #'/home/cont_jh/Data/semantic3d')
-parser.add_argument('--path_to_output', default="Data/forest4D_dlr", help="Path to output") #'/home/cont_jh/Data/semantic3d')
-parser.add_argument('--n_labels', default=4, type=int, help='number of classes')  # 8
+parser.add_argument('--path_to_data', default="/Data/forest4D_dlr", help="Path to data") 
+parser.add_argument('--path_to_output', default="Data/forest4D_dlr", help="Path to output") 
+parser.add_argument('--n_labels', default=4, type=int, help='number of classes')  
 parser.add_argument('--areas', default="testing/, training/, validation/", help="list of subfolders to be processed separated by ( , ) ")
 parser.add_argument('--RGB', default="False", help='True if Data set contains RGB information')
 parser.add_argument('--version', default="V0", help='for multiples segmentation parameters '
@@ -47,11 +47,11 @@ parser.add_argument('--rgb_intensity_index', type=list, help='rgb or intensity i
 
 
 parser.add_argument('--ver_batch', default=2000000, type=int, help='Batch size for reading large files')
-parser.add_argument('--voxel_width', default=0.01, type=float, help='voxel size when subsampling (in m)')#0.05
-parser.add_argument('--k_nn_geof', default=45, type=int, help='number of neighbors for the geometric features')#45
+parser.add_argument('--voxel_width', default=0.01, type=float, help='voxel size when subsampling (in m)')
+parser.add_argument('--k_nn_geof', default=45, type=int, help='number of neighbors for the geometric features')
 parser.add_argument('--k_nn_adj', default=10, type=int, help='adjacency structure for the minimal partition')
 parser.add_argument('--lambda_edge_weight', default=1., type=float, help='parameter determine the edge weight for minimal part.')
-parser.add_argument('--reg_strength', default=.1, type=float, help='regularization strength for the minimal partition')#.8 .6 .136 used for oakland 0.03
+parser.add_argument('--reg_strength', default=.1, type=float, help='regularization strength for the minimal partition')
 parser.add_argument('--d_se_max', default=0, type=float, help='max length of super edges')
 
 parser.add_argument('--sorted', default=False, type=bool, help="Reverse order to read the data")

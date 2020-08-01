@@ -3,7 +3,7 @@
 #SBATCH --gres=gpu:0
 #SBATCH --partition=gpu
 #SBATCH --output=seg.txt
-#SBATCH --mem=200G 
+#SBATCH --mem=20G 
 
 #   ---------SBATCH --time=0-10:00   
 
@@ -22,7 +22,7 @@ reg_strength=.5
 voxel=.01
 
 
-python -u partition/segmentation.py --areas=$areas --n_labels=$n_classes --path_to_data=$path_to_data_ --path_to_output=$path_to_output_ --version="V0" --reg_strength=$reg_strength  --voxel_width=$voxel # --rgb_intensity_index=3 --gt_index=4
+python -u partition/segmentation.py --areas=$areas --n_labels=$n_classes --path_to_data=$path_to_data_ --path_to_output=$path_to_output_ --version="V0" --reg_strength=$reg_strength  --voxel_width=$voxel
 
 #python -u partition/write_segments_to_pc.py --areas=$areas --db_test_name=$areas --n_classes=$n_classes --metrics=False --path_to_data=$path_to_data_ --path_to_output=$path_to_output_
 
